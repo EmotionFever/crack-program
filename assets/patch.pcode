@@ -1,0 +1,179 @@
+trait method Qname(ProtectedNamespace("com.boonzi.desktop.core.controller:AppController"),"startup")
+dispid 0
+method
+name null
+flag NEED_ACTIVATION
+returns Qname(PackageNamespace(""),"void")
+
+body
+maxstack 10
+localcount 3
+initscopedepth 5
+maxscopedepth 10
+try from ofs0016 to ofs0027 target ofs002b type Qname(PackageNamespace(""),"Error") name Qname(PackageNamespace(""),"error")
+
+code
+getlocal_0
+pushscope
+newactivation
+dup
+setlocal_1
+pushscope
+getlocal_0
+getproperty Qname(PackageNamespace(""),"dbModel")
+findpropstrict Qname(PackageNamespace("flash.data"),"SQLConnection")
+constructprop Qname(PackageNamespace("flash.data"),"SQLConnection") 0
+setproperty Qname(PackageNamespace(""),"baseDBSyncConnection")
+ofs0016:getlocal_0
+getproperty Qname(PackageNamespace(""),"dbModel")
+getproperty Qname(PackageNamespace(""),"baseDBSyncConnection")
+getlex Qname(StaticProtectedNs("com.boonzi.desktop.core.controller:AppController"),"defaultDatabaseFile")
+callpropvoid Qname(PackageNamespace(""),"open") 1
+ofs0027:jump ofs0063
+ofs002b:getlocal_0
+pushscope
+getlocal_1
+pushscope
+newcatch 0
+dup
+setlocal_2
+dup
+pushscope
+swap
+setslot 1
+findproperty Qname(PrivateNamespace(null,"1119"),"internalErrorView")
+getlex Qname(PackageNamespace("com.boonzi.desktop.core.view.components"),"CustomAlertWithIcon")
+pushstring "Error"
+pushstring "Internal application error: Please contact support."
+getlex Qname(PackageNamespace(""),"MitraSkinAssets")
+getproperty Qname(PackageNamespace(""),"ICO_WARNING_MEDIUM")
+pushnull
+pushshort 390
+pushshort 195
+pushfalse
+pushnull
+callproperty Qname(PackageNamespace(""),"showPopup") 8
+initproperty Qname(PrivateNamespace(null,"1119"),"internalErrorView")
+returnvoid
+popscope
+kill 2
+ofs0063:getlex Qname(PackageNamespace("com.boonzi.desktop.core.controller.helper"),"DBCreator")
+getlocal_0
+getproperty Qname(PackageNamespace(""),"dbModel")
+getproperty Qname(PackageNamespace(""),"baseDBSyncConnection")
+getlex Qname(PackageNamespace("com.boonzi.desktop.core.model.dbschema"),"BaseDBSchema")
+getproperty Qname(PackageNamespace(""),"updateCommands")
+callproperty Qname(PackageNamespace(""),"createDatabase") 2
+iftrue ofs00a6
+getlocal_0
+getlex Qname(PackageNamespace("com.boonzi.desktop.core.view.components"),"CustomAlertWithIcon")
+pushstring "Error"
+pushstring "Internal application error: Please contact support."
+getlex Qname(PackageNamespace(""),"MitraSkinAssets")
+getproperty Qname(PackageNamespace(""),"ICO_WARNING_MEDIUM")
+pushnull
+pushshort 390
+pushshort 195
+pushfalse
+pushnull
+callproperty Qname(PackageNamespace(""),"showPopup") 8
+initproperty Qname(PrivateNamespace(null,"1119"),"internalErrorView")
+returnvoid
+ofs00a6:getlocal_0
+getproperty Qname(PackageNamespace(""),"languageController")
+getlocal_0
+getproperty Qname(PackageNamespace(""),"dbModel")
+getproperty Qname(PackageNamespace(""),"baseDBSyncConnection")
+callpropvoid Qname(PackageNamespace(""),"loadAppLanguage") 1
+getlocal_0
+getproperty Qname(PackageNamespace(""),"currencyController")
+callpropvoid Qname(PackageNamespace(""),"loadBaseCurrencies") 0
+getscopeobject 1
+getlocal_0
+getlocal_0
+getproperty Qname(PackageNamespace(""),"dbModel")
+getproperty Qname(PackageNamespace(""),"baseDBSyncConnection")
+callproperty Qname(ProtectedNamespace("com.boonzi.desktop.core.controller:AppController"),"hasProfile") 1
+convert_b
+setslot 1
+getscopeobject 1
+getlocal_0
+getlocal_0
+getproperty Qname(PackageNamespace(""),"dbModel")
+getproperty Qname(PackageNamespace(""),"baseDBSyncConnection")
+callproperty Qname(ProtectedNamespace("com.boonzi.desktop.core.controller:AppController"),"getSerialKey") 1
+coerce_s
+setslot 2
+getlocal_0
+callpropvoid Qname(PackageNamespace(""),"getProfiles") 0
+getscopeobject 1
+getslot 1
+convert_b
+iffalse ofs0141
+getlocal_0
+getproperty Qname(PackageNamespace(""),"appModel")
+pushfalse
+setproperty Qname(PackageNamespace(""),"inLightMode")
+getlocal_0
+getproperty Qname(PackageNamespace(""),"appModel")
+pushfalse
+setproperty Qname(PackageNamespace(""),"isInvalidLicense")
+getlocal_0
+getproperty Qname(PackageNamespace(""),"appModel")
+pushfalse
+setproperty Qname(PackageNamespace(""),"isActivatedInManyDevices")
+getlocal_0
+callpropvoid Qname(PackageNamespace(""),"updateFreeMode") 0
+getlocal_0
+callpropvoid Qname(PackageNamespace(""),"updateConfig") 0
+getlocal_0
+callpropvoid Qname(ProtectedNamespace("com.boonzi.desktop.core.controller:AppController"),"startAppWithDefaults") 0
+getlocal_0
+getproperty Qname(PackageNamespace(""),"dispatcher")
+findpropstrict Qname(PackageNamespace("com.boonzi.desktop.core.controller.events"),"UpdaterEvent")
+getlex Qname(PackageNamespace("com.boonzi.desktop.core.controller.events"),"UpdaterEvent")
+getproperty Qname(PackageNamespace(""),"UPDATE")
+constructprop Qname(PackageNamespace("com.boonzi.desktop.core.controller.events"),"UpdaterEvent") 1
+callpropvoid Qname(Namespace("flash.events:IEventDispatcher"),"dispatchEvent") 1
+ofs0141:getlocal_0
+callpropvoid Qname(PackageNamespace(""),"loadLicenseState") 0
+getscopeobject 1
+getslot 1
+not
+iffalse ofs0168
+getlocal_0
+getproperty Qname(PackageNamespace(""),"dispatcher")
+findpropstrict Qname(PackageNamespace("com.boonzi.desktop.core.controller.events"),"StateEvent")
+getlex Qname(PackageNamespace("com.boonzi.desktop.core.controller.events"),"StateEvent")
+getproperty Qname(PackageNamespace(""),"TO_CREATE_PROFILE")
+constructprop Qname(PackageNamespace("com.boonzi.desktop.core.controller.events"),"StateEvent") 1
+callpropvoid Qname(Namespace("flash.events:IEventDispatcher"),"dispatchEvent") 1
+returnvoid
+ofs0168:getlocal_0
+getproperty Qname(PackageNamespace(""),"appModel")
+getscopeobject 1
+getslot 2
+setproperty Qname(PackageNamespace(""),"serialKey")
+getlocal_0
+getproperty Qname(PackageNamespace(""),"appModel")
+pushfalse
+setproperty Qname(PackageNamespace(""),"inNotActivatedMode")
+getlocal_0
+getproperty Qname(PackageNamespace(""),"appModel")
+pushfalse
+setproperty Qname(PackageNamespace(""),"inLightMode")
+getlocal_0
+getproperty Qname(PackageNamespace(""),"appModel")
+pushfalse
+setproperty Qname(PackageNamespace(""),"isActivatedInManyDevices")
+getlocal_0
+getproperty Qname(PackageNamespace(""),"appModel")
+pushfalse
+setproperty Qname(PackageNamespace(""),"isInvalidLicense")
+getlocal_0
+callpropvoid Qname(PrivateNamespace(null,"1119"),"monitorConnection") 0
+returnvoid
+end ; code
+end ; body
+end ; method
+end ; trait
