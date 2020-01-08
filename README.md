@@ -5,6 +5,10 @@ Program that allows you to access premium features of a program called Boonzi. M
 ### Preview
 Link of a youtube video with a demo of this project: 
 
+### Simple Overview of how the crack was made
+
+I opened Boonzi for the first time and, after searching in the whole files of the program, I found a '.swf' file that caught my attention due to its size. I searched for how to decompile a '.swf' file and I found JPEXS Free Flash Decompiler. I opened the '.swf' file of Boonzi and it decompiled smoothly on JPEXS. I searched in all the files and folders and after a lot of trial and error, I found  a handler that had a variable that after I activated it to true it cracked the program. After that I found a way to disable auto-updated on the app. Made a GUI for the app. And finished.
+
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. 
