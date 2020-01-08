@@ -1,4 +1,4 @@
-# Movie Theatre Management program
+# Crack program for Boonzi
 
 Program that allows you to access premium features of a program called Boonzi. My program as a GUI where you only have to ckick a button for the program to start. 
 
